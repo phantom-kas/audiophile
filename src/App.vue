@@ -1,85 +1,93 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterView } from 'vue-router'
+import nav_bar from './components/nav_bar/nav_bar.vue';
+import cart_icon from './components/icons/cart_icon.vue';
+import audiop_svg from './components/nav_bar/audiop_svg.vue';
+import Footer from './components/footer_elments/footer.vue';
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <header class="w-full flex flex-row   bg-black items-center justify-center text-xs z-auto">
+    <div class=" flex justify-between items-center   sm:justify-start  flex-row max1200 px-7">
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <div class="bars relative md:hidden sm:mr-7 h-full flex flex-col items-center justify-center">
+      </div>
+      <router-link to="/" class=" md:mr-[10vw]">
+        <audiop_svg />
+      </router-link>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+      <nav_bar
+        class="md:left-[unset] md:bg-[unset] md:relative flex md:p-0 p-4 gap-2 md:flex-row md:justify-start md:gap-10  flex-col fixed top-24 md:top-[unset] bg-black left-7" />
+
+      <div class=" sm:ml-auto">
+        <cart_icon />
+      </div>
     </div>
+
   </header>
 
-  <RouterView />
+  <main class="w-full font-manrope relative">
+
+    <RouterView />
+  </main>
+  <Footer/>
+
 </template>
 
 <style scoped>
+header,
+main {
+  --nav-height: 96px;
+}
+
 header {
-  line-height: 1.5;
-  max-height: 100vh;
+  height: var(--nav-height);
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.topnavh {
+  top: var(--nav-height)
 }
 
-nav {
+.top0 {}
+
+.bars {
+  width: 1.4rem;
+  position: relative;
+  --size: 4px;
+  --gap: 0.5rem;
+  border-bottom: var(--size) solid #fff
+}
+
+.bars::before,
+.bars::after {
+  transition: all 0.2s;
+  content: '';
+  border-bottom: var(--size) solid #fff;
+  position: absolute;
   width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  transform-origin: left;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.bars.x {
+  border: none;
+  width: 1.7rem;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+.bars::before {
+  top: calc(-1 * var(--gap));
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+.bars::after {
+  top: calc(var(--gap));
 }
 
-nav a:first-of-type {
-  border: 0;
+.bars.x::before {
+  rotate: 45deg;
+
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.bars.x::after {
+  rotate: -45deg;
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
 }
 </style>
