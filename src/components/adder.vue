@@ -4,16 +4,33 @@ import { onMounted, ref } from 'vue';
 const slidAdm = ref('slide-up')
 const val = ref(0);
 
-const { title, value } = defineProps<{
-    title?: string,
-    value?: number,
-}>()
 
-const emit = defineEmits(['change'])
+
+
+const props = defineProps({
+    value: {
+        type: Number,
+        default: 0
+    },
+    title: {
+        type: String,
+        default: ''
+    },
+    w:{
+        type: String,
+        default: 'w-[120px]'
+    },
+    h: {
+        type: String,
+        default: 'h-[48px]'
+    }
+})
+
+const emit = defineEmits(['change','increase','reduce'])
 
 onMounted(() => {
-    if (value) {
-        val.value = value
+    if (props.value) {
+        val.value = props.value
     }
 })
 
@@ -25,10 +42,12 @@ slidAdm.value ='slide-down'
     val.value -= 1;
      emit('change', val)
 
+     emit('reduce')
+
 }
 </script>
 <template>
-    <div class="flex flex-row justify-between items-center w-[120px] h-[48px] bg-[#F1F1F1]">
+    <div :class="w +' '+ h" class="flex flex-row justify-between items-center   bg-[#F1F1F1]">
 
         <button type="button" @click="handelDecreament()"
             class="fs10   round1  hov_glow w-[max(50)] grow cursor-pointer hover:text-orange hover:font-[900]">
@@ -41,7 +60,7 @@ slidAdm.value ='slide-down'
         </transition>
 
         <!-- </div> -->
-        <button type="button" @click="e => { slidAdm = 'slide-up'; val += 1; emit('change', val) }"
+        <button type="button" @click="e => { slidAdm = 'slide-up'; val += 1; emit('change', val),emit('increase') }"
             class=" w-[max(50)]  grow cursor-pointer hover:text-orange hover:font-[900]">
             +
         </button>

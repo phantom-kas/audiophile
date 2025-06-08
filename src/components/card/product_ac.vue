@@ -34,7 +34,7 @@ defineProps({
             <div class=" flex flex-row gap-4 px ">
                 <adder :value="1"  @change="e=>quantiy = e" />
                     <!-- {{ cart.itemsCount }} -->
-                <vbutton @click="cart.increment(product,quantiy),console.log(cart.cartItems)" >
+                <vbutton @click="cart.increment(product,quantiy)" >
                     ADD TO CART
                 </vbutton >
             </div>

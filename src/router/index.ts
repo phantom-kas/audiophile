@@ -32,6 +32,7 @@ const router = createRouter({
       name: 'earphones',
       component: () => import('../views/earphones.vue'),
     },
+    
     {
       path: '/product/:name',
       name: 'product',
@@ -39,6 +40,11 @@ const router = createRouter({
       props: (route: { params: { name?: string | undefined } }) => ({
         name: route.params.name ?? "none",
       }),
+    },
+    {
+      path: '/checkout',
+      name: 'checkout',
+      component: () => import('../views/checkout.vue'),
     },
   ],
 })
