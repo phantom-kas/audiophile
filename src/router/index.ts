@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
-  history: createWebHistory('/audiophile/'),
+   history: createWebHistory(import.meta.env.BASE_URL),
+
    scrollBehavior(to, from, savedPosition) {
     // return desired position
     // if (to.hash) {
