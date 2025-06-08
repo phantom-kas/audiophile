@@ -8,7 +8,7 @@ const emits = defineEmits(['checkoutPay'])
 
 const router = useRouter()
 
-const handelSubmit = ()=>{
+const handelSubmit = () => {
     emits('checkoutPay')
 }
 </script>
@@ -56,22 +56,24 @@ const handelSubmit = ()=>{
                     <span class="grow">Payment Method</span>
 
                     <div class=" flex flex-col gap-3.5 grow">
-                        <radio class="w-full"/>
-                        <radio class="w-full"/>
+                        <radio class="w-full" />
+                        <radio class="w-full" />
                     </div>
                 </div>
                 <div class="flex flex-col sm:flex-row justify-between gap-3.5">
                     <vinput label="e-Money Number" placeholder="238521993" class=" grow" />
                     <vinput label="e-Money Pin" placeholder="6891" type="Email" class=" grow" />
                 </div>
-            </div>
-            <div class=" flex flex-row justify-between gap-7 px-7 hidden md:block">
-                <strange_icon/>
-                <div class=" opacity-[50%] ">
-                    The 'Cash on Delivery' option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.
+                <div class=" md:flex flex-row justify-between gap-7 hidden md:block">
+                    <strange_icon />
+                    <div class=" opacity-[50%] ">
+                        The 'Cash on Delivery' option enables you to pay in cash when our delivery courier arrives at
+                        your residence. Just make sure your address is correct so that your order will not be cancelled.
+                    </div>
                 </div>
             </div>
-            <cart_sum class="w-full md:w-[27%]"/>
+
+            <cart_sum class="w-full md:w-[27%]" />
 
         </form>
     </div>
