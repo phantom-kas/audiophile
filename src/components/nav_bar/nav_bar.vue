@@ -1,16 +1,27 @@
 <script setup lang="ts">
 import nav_links from './nav_links.vue';
-import cart_icon from '../icons/cart_icon.vue';
+
+defineProps({
+    isopen: {
+        type: Boolean,
+        default: false
+    }
+});
+
+const emit = defineEmits(['close']);
 </script>
 <template>
     <nav class="manrope">
-            <nav_links />
-            <nav_links label="HEADPHONES" />
-            <nav_links label="SPEAKERS" />
-            <nav_links label="EARPHONES" />
-            <!-- <div>&nsbp;</div> -->
+        <Teleport defer to="#modaloutlet">
+            <div @click="emit('close')" v-if="isopen" class=" bg-black/40 h-[100vh] w-full sm:hidden"></div>
+        </Teleport>
+        <nav_links @click="emit('close')" :to="{ name: 'home' }" />
+
+        
+        <nav_links @click="emit('close')" :to="{ name: 'headphones' }" label="HEADPHONES" />
+        <nav_links @click="emit('close')" :to="{ name: 'speakers' }" label="SPEAKERS" />
+        <nav_links @click="emit('close')" :to="{ name: 'earphones' }" label="EARPHONES" />
+        <!-- <div>&nsbp;</div> -->
     </nav>
 </template>
-<style scoped>
-
-</style>
+<style scoped></style>

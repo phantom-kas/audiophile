@@ -4,22 +4,29 @@
 #app {
   width: 100%;
 }
+
 @theme {
   --font-manrop: manrope;
-  --breakpoint-b952:952px
-  --breakpoint-b1000:100px
+  --breakpoint-b952: 952px;
+  --breakpoint-b1000: 100px;
+  --color-orange: #D87D4A;
+  --color-orange2: #FBAF85;
+  --color-bermuda: #78dcca;
 }
+
 @font-face {
   font-family: manrope;
   src: url('../fonts/Manrope/Manrope-VariableFont_wght.ttf');
 }
 
-.max1500{
+.max1500 {
   width: min(1500px, 100%);
 }
-.max1200{
+
+.max1200 {
   width: min(1200px, 100%);
 }
-*{
+
+* {
   /* font-size:inherit; */
 }

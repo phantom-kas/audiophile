@@ -3,6 +3,14 @@ import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+   scrollBehavior(to, from, savedPosition) {
+    // return desired position
+    // if (to.hash) {
+    //   // window.alert(to.hash)
+     
+    // }
+    document.getElementById("top")?.scrollIntoView();
+  },
   routes: [
     {
       path: '/',
@@ -10,12 +18,27 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
+      path: '/headphones',
+      name: 'headphones',
+      component: () => import('../views/headphones.vue'),
+    },
+    {
+      path: '/speakers',
+      name: 'speakers',
+      component: () => import('../views/speakers.vue'),
+    },
+    {
+      path: '/earphones',
+      name: 'earphones',
+      component: () => import('../views/earphones.vue'),
+    },
+    {
+      path: '/product/:name',
+      name: 'product',
+      component: () => import('../views/product.vue'),
+      props: (route: { params: { name?: string | undefined } }) => ({
+        name: route.params.name ?? "none",
+      }),
     },
   ],
 })

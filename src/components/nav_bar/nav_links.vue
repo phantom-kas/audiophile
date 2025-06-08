@@ -13,7 +13,7 @@ defineProps({
 })
 </script>
 <template>
-    <router-link :to class=" text-white ">
+    <router-link :to class=" text-white hover:text-orange font-[600] ">
         <slot>
             {{ label }}
         </slot>
@@ -23,4 +23,8 @@ defineProps({
 </template>
 
 
-<style scoped></style>
+<style scoped>
+.router-link-exact-active {
+    color: #D87D4A;
+}
+</style>

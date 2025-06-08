@@ -24,13 +24,16 @@ defineProps({
     <div class="   w-full flex flex-col items-center justify-end ">
 
         <div class="card1img md:w-[122.95px] w-[104px]  sm:w-[79.92px] z-auto relative ">
-            <img :src="product.categoryImage.desktop" class=" w-full"
-                alt="">
+            <img :src="product.categoryImage.desktop" class=" w-full" alt="">
         </div>
         <div
             class=" w-full sm:h-[200px] h-[165px] flex items-center  flex-col justify-end bg-[#F1F1F1] rounded-xl pb-5">
             <span class=" uppercase text-xl font-[600]">{{ product.category }}</span>
-            <vbutton3 class="  mt-2" />
+            <!--  -->
+            <router-link :to="{ name: 'product', params: { name: product['slug'] } }"
+                class="flex justify-center items-center mt-2">
+                <vbutton3 class="  " />
+            </router-link>
         </div>
     </div>
 </template>
@@ -47,7 +50,7 @@ defineProps({
     /*  */
 }
 
-.card1img::after{
+.card1img::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -56,6 +59,6 @@ defineProps({
     height: 0rem;
     left: 0;
     z-index: 100;
-    box-shadow:-4px 19px 40px 5px rgba(0, 0, 0, 1)
+    box-shadow: -4px 19px 40px 5px rgba(0, 0, 0, 1)
 }
 </style>
