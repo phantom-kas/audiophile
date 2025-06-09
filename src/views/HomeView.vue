@@ -5,11 +5,60 @@ import vbutton1 from '@/components/buttons/vbutton1.vue';
 import res_img from '@/components/res_img.vue';
 import vbutton2 from '@/components/buttons/vbutton2.vue';
 import man_lm from '@/components/man_lm.vue';
+import { onMounted, onUnmounted } from 'vue';
+
+
+onMounted(() => {
+
+  const target = document.getElementById('sec1');
+  const elementsToChange = document.querySelectorAll('.header');
+
+  const dd = document.querySelectorAll('.dd');
+
+  dd.forEach(e => {
+    e.classList.add('hidden')
+  })
+
+  if (!target) return
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+
+      if (!entry.isIntersecting) {
+        elementsToChange[0].classList.add('bg-black');
+        // elementsToChange[0].classList.remove('hidden');
+
+      } else {
+        elementsToChange[0].classList.remove('bg-black');
+        // elementsToChange[0].classList.add('hidden');
+
+      }
+
+    });
+  }, {
+    threshold: 0.8
+  });
+
+  observer.observe(target);
+})
+
+onUnmounted(() => {
+  const dd = document.querySelectorAll('.dd');
+
+    dd.forEach(e => {
+    e.classList.remove('hidden')
+  })
+
+  const elementsToChange = document.querySelectorAll('.header');
+  elementsToChange[0].classList.add('bg-black');
+  elementsToChange[0].classList.remove('hidden');
+
+})
 </script>
+
 
 <template>
   <div class="flex flex-col items-center w-full">
-    <product_card_big class="sec1" />
+    <product_card_big id="sec1" class="sec1" />
 
     <div class="max1200 px-7 flex flex-col items-center justify-center">
       <cards_3 class="py-30" />
@@ -26,7 +75,8 @@ import man_lm from '@/components/man_lm.vue';
             remarkable <br class=" hidden md:block" /> sound.
           </span>
 
-          <router-link :to="{ name: 'product', params: { name: 'zx9-speaker' } }" class="flex justify-center items-center ">
+          <router-link :to="{ name: 'product', params: { name: 'zx9-speaker' } }"
+            class="flex justify-center items-center ">
             <vbutton1 class="mb-2 md:mt-0 mt-8" />
           </router-link>
         </div>
@@ -42,7 +92,8 @@ import man_lm from '@/components/man_lm.vue';
         <span class="text-[28px] font-[600] leading-none">
           ZX7 SPEAKER
         </span>
-        <router-link :to="{ name: 'product', params: { name: 'zx7-speaker' } }" class="flex justify-center items-center">
+        <router-link :to="{ name: 'product', params: { name: 'zx7-speaker' } }"
+          class="flex justify-center items-center">
           <vbutton2 />
         </router-link>
       </div>
@@ -56,7 +107,8 @@ import man_lm from '@/components/man_lm.vue';
         class="cusw h-[var(--cwidth)] sm:h-[unset] w-full sm:w-[49%] flex flex-col justify-center items-start bg-[#F1F1F1] p-7 rounded-[8px] text-[28px] font-[600] gap-7">
         YX1 EARPHONES
 
-        <router-link :to="{ name: 'product', params: { name: 'yx1-earphones' } }" class="flex justify-center items-center">
+        <router-link :to="{ name: 'product', params: { name: 'yx1-earphones' } }"
+          class="flex justify-center items-center">
           <vbutton2 />
         </router-link>
       </div>

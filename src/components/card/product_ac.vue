@@ -17,7 +17,7 @@ defineProps({
 </script>
 <template>
     <div
-        class=" max1200 flex flex-col-reverse sm:flex-row-reverse  items-center justify-center sm:justify-between px-7  relative sm:gap-y-4 gap-y-2">
+        class=" max1200 flex flex-col-reverse sm:flex-row-reverse  items-center justify-center sm:justify-between px-7  relative sm:gap-y-4 gap-y-10">
         <div
             class="sm:w-[46%] w-full flex flex-col sm:justify-center sm:items-start  h-full sm:gap-y-10 gap-y-5 sm:text-start">
             <h2 v-if="product.new"
@@ -31,7 +31,7 @@ defineProps({
                 {{ product.description }}
             </span>
             <span class=" text-[18px] font-[600]" v-html="'$ '+formateNumber(product.price)"></span>
-            <div class=" flex flex-row gap-4 px ">
+            <div class=" flex flex-row gap-4 px gap-y-20 ">
                 <adder :value="1"  @change="e=>quantiy = e" />
                     <!-- {{ cart.itemsCount }} -->
                 <vbutton @click="cart.increment(product,quantiy)" >

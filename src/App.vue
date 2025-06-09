@@ -24,8 +24,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="top" class="dd w-full   bg-black py-[1rem] mb-[-0.1rem]"></div>
-  <header class="w-full flex flex-row   bg-black items-center justify-center text-xs z-1000 sticky top-0">
+  <div id="top" class="dd w-full   bg-black py-[1rem] mb-[-0.1rem] topnav"></div>
+  <header class="header topnav w-full flex flex-row   bg-black items-center justify-center text-xs z-1000 sticky top-0">
     <div class=" flex justify-between items-center   sm:justify-start  flex-row max1200 px-7">
 
       <div @click="navIsOpen = !navIsOpen, cartS.cartIsOpen = false" :class="[navIsOpen ? 'x' : '']"
@@ -49,7 +49,7 @@ onMounted(() => {
       </div>
     </div>
   </header>
-  <div class="dd w-full py-[1rem] bg-black mt-[-0.1rem]"></div>
+  <div class="dd w-full py-[1rem] bg-black mt-[-0.1rem] topnav"></div>
 
   <div id="modaloutlet" class=" w-full fixed z-10"></div>
   <cart @close="cartS.cartIsOpen = false" v-if="cartS.cartIsOpen" id="cart" class=" fixed z-10 overflow-scroll" />

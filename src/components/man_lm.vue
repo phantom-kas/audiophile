@@ -3,10 +3,10 @@ import res_img from './res_img.vue';
 </script>
 <template>
     <div
-        class=" max1200 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between px-7 my-30 relative gap-y-7">
-        <div class="md:w-[46%] w-full flex flex-col md:justify-center items-start  h-full">
-            <h2 class=" text-[40px] font-[600] w-full leading-none mb-5 sm:w-[max(379px)]">
-                BRINGING YOU THE <span class=" text-[#D87D4A]">BEST</span> AUDIO GEAR
+        class=" max1200 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between px-7 my-30 relative gap-y-15">
+        <div class="md:w-[46%] w-full flex flex-col justify-center md:justify-center items-center md:items-start  h-full text-center md:text-start gap-y-10 md:gap-y-4">
+            <h2 class=" text-[28px] sm:text-[40px] font-[600]  leading-none mb-5  text-center w-full md:text-start">
+                BRINGING YOU THE  <span class=" text-[#D87D4A]">BEST</span> <br class= "hidden sm:block  md:hidden"/> AUDIO GEAR
             </h2>
             <span class=" opacity-[50%]">
                 Located at the heart of New York City, Audiophile is the premier store for high end headphones,

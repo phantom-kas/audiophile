@@ -52,15 +52,15 @@ onMounted(() => {
             <product_ac :product="product" />
 
 
-            <div class="flex md:flex-row flex-col justify-between gap-x-5 items-start max1200 px-7 gap-y-10">
+            <div class="flex md:flex-row flex-col justify-between gap-x-5 items-start max1200 px-7 gap-y-20 mt-15 md:mt-30">
 
-                <div class="flex flex-col items-start md:w-[48%] gap-y-4">
+                <div class="flex flex-col items-start md:w-[48%] gap-y-5">
                     <h1 class=" text-[32px] font-[600]">FEATURES</h1>
                     <div class=" opacity-[50%]" v-html="product.features"></div>
                 </div>
 
                 <div
-                    class="flex gap-y-5 sm:flex-row md:flex-col flex-col md:w-[48%] md:items-start sm:justify-between w-[80%] ">
+                    class="flex gap-y-15 sm:flex-row md:flex-col flex-col md:w-[48%] md:items-start sm:justify-between w-[80%] ">
                     <h2 class=" text-[32px] font-[600]">IN THE BOX</h2>
                     <div class="flex flex-col gap-y-3">
                         <div class="flex flex-row justify-start items-center gap-4" v-for="v, i in product.includes"
@@ -74,7 +74,7 @@ onMounted(() => {
 
 
             <!-- galary -->
-            <div class="flex sm:flex-row flex-col justify-between  items-start max1200 px-7 gap-y-4 gap-x-4 my-30">
+            <div class="flex sm:flex-row flex-col justify-between  items-start max1200 px-7 gap-y-4 gap-x-4 my-30 md:mt-40">
                 <div class="  flex flex-col grow gap-y-4 justify-between  self-stretch">
                     <res_img_dmt class="grow  rounded-[8px]" :img-obj="product.gallery.first" />
                     <res_img_dmt class="grow  rounded-[8px]" :img-obj="product.gallery.second" />
@@ -86,7 +86,7 @@ onMounted(() => {
             <!-- galary -->
 
             <!-- suggestion -->
-            <div class="flex flex-col items-center justify-center max1200 px-7 gap-y-6 my-10">
+            <div class="flex flex-col items-center justify-center max1200 px-7 gap-y-6 my-10 md:mt-40">
                 <h1 class=" uppercase font-[600] text-[24px]"> you may also like</h1>
                 <div class=" flex sm:flex-row flex-col justify-between items-start  gap-y-4 gap-x-4 w-full">
                     <suguestion class=" sm:w-[37%] w-full" v-for="p, i in product.others" :product="p" />

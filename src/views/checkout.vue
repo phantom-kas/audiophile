@@ -56,8 +56,8 @@ const handelSubmit = () => {
                     <span class="grow">Payment Method</span>
 
                     <div class=" flex flex-col gap-3.5 grow">
-                        <radio class="w-full" />
-                        <radio class="w-full" />
+                        <radio id='radio1' value="e-Money" class="w-full" >e-Money</radio>
+                        <radio id='radio2' value="Cash on Delivery" class="w-full" >Cash on Delivery</radio>
                     </div>
                 </div>
                 <div class="flex flex-col sm:flex-row justify-between gap-3.5">

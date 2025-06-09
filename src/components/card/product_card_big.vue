@@ -1,15 +1,17 @@
 <script setup lang="ts">
 import data from '../../data.json'
 import vbutton from '../buttons/vbutton.vue';
-
+import top_line from '../top_line.vue';
 </script>
 <template>
     <div
         class="flex manrope flex-row items-center justify-center  md:max-b952:items-end  b952:items-center   gap-7 text-white  relative w-full">
 
 
+        <!-- <top_line class=" absolute top-0"/> -->
         <div class="w-full absolute flex items-center justify-center ">
             <div class=" h-full w-full  md:w-[max(1200px)] md:px-7 flex flex-col items-center md:items-start">
+
                 <div
                     class="w-full gap-6 flex flex-col items-center justify-center md:items-start  lg:gap-4 xl:gap-10  sm:w-[max(379px)] md:gap-3 md:pb-7">
                     <span class=" font-[100] text-[14px] opacity-[49.66%]">NEW PRODUCT</span>
