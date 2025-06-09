@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useCartStore } from '@/stores/cart';
 import res_img_dmt from './res_img_dmt.vue';
 import vbutton from './buttons/vbutton.vue';

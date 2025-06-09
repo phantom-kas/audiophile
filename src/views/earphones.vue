@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang = 'ts'>
 import category_head from '@/components/category_head.vue';
 import product_dis from '@/components/card/product_dis.vue';
 import data from '../data.json';
