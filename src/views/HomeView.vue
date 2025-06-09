@@ -6,17 +6,16 @@ import res_img from '@/components/res_img.vue';
 import vbutton2 from '@/components/buttons/vbutton2.vue';
 import man_lm from '@/components/man_lm.vue';
 import { onMounted, onUnmounted } from 'vue';
-
-
+import top_line from '@/components/top_line.vue';
 onMounted(() => {
 
   const target = document.getElementById('sec1');
   const elementsToChange = document.querySelectorAll('.header');
 
   const dd = document.querySelectorAll('.dd');
-
+  dd[0].classList.add('hidden')
   dd.forEach(e => {
-    e.classList.add('hidden')
+    e.classList.remove('bg-black')
   })
 
   if (!target) return
@@ -44,8 +43,9 @@ onMounted(() => {
 onUnmounted(() => {
   const dd = document.querySelectorAll('.dd');
 
-    dd.forEach(e => {
+  dd.forEach(e => {
     e.classList.remove('hidden')
+    e.classList.add('bg-black')
   })
 
   const elementsToChange = document.querySelectorAll('.header');
@@ -58,17 +58,27 @@ onUnmounted(() => {
 
 <template>
   <div class="flex flex-col items-center w-full">
+    <top_line />
     <product_card_big id="sec1" class="sec1" />
 
     <div class="max1200 px-7 flex flex-col items-center justify-center">
-      <cards_3 class="py-30" />
+      <cards_3 class="mt-40" />
 
       <!-- section2 -->
       <div
-        class="   py-20 md:pb-0 md:pt-20 w-full flex flex-col  items-center  md:flex-row md:items-start md:justify-center bg-orange md:gap-40 overflow-hidden  text-white text-center md:text-start gap-y-17 rounded-[1rem]">
-        <img class="md:w-[30%] b1000:w-[410px] w-[170px] sm:w-[200px] sec2img md:mb-[-2rem]"
-          src="/assets/home/desktop/image-speaker-zx9.png" />
-        <div class="flex flex-col justify-center items-center md:items-start gap-5">
+        class="mt-60  py-20 md:pb-0 md:pt-20 w-full flex flex-col  items-center  md:flex-row md:items-start md:justify-center bg-orange md:gap-40 overflow-hidden  text-white text-center md:text-start gap-y-17 rounded-[1rem] relative">
+        
+
+
+        <div class="flex flex-col sec2img justify-start items-start md:w-[30%] b1000:w-[410px] w-[170px] sm:w-[200px] relative" >
+          <res_img path="/assets/home/" file-name="image-speaker-zx9.png"
+            class="w-full h-full  md:mb-[-2rem] z-20" />
+
+            <span class=" opacity-[30%] absolute size-[400px] rounded-[50%] border-1 border-[#fff] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:-translate-y-1/3  z-[1]"></span>
+            <span class=" opacity-[30%] absolute size-[490px]  md:-translate-y-1/3 rounded-[50%] border-1 border-[#fff] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]"></span>
+            <span class=" opacity-[30%] absolute size-[800px]   rounded-[50%] border-1 border-[#fff] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]"></span>
+        </div>
+        <div class="flex flex-col justify-center items-center md:items-start gap-5 z-10">
           <h1 class="   text-[58px] font-[600] leading-none">ZX9<br />SPEAKER</h1>
           <span>
             Upgrade to premium speakers that are <br /> phenomenally built to deliver truly <br class=" sm:hidden" />

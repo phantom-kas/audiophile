@@ -5,11 +5,18 @@ import { useCartStore } from '@/stores/cart';
 import { formateNumber } from '@/composabels/functions';
 import res_img_dmt from './res_img_dmt.vue';
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 const cartData = useCartStore()
 
 const emit = defineEmits(['close'])
 
 const showMore = ref(false)
+const router = useRouter()
+const handelEnd = ()=>{
+    cartData.removeAllItems()
+    router.push('/')
+    emit('close')
+}
 </script>
 <template>
     <div @click="emit('close')" class="w-full  flex flex-col items-center justify-start bg-black/50 h-[90vh] z-1000 ">
@@ -57,7 +64,7 @@ const showMore = ref(false)
 
                 <span class=" opacity-[50%] text-[15px]">You will receive an email confirmation shortly.</span>
 
-                <vbutton class=" w-full" @click="emit('close')">
+                <vbutton class=" w-full" @click="handelEnd()">
                     BACK TO HOME
                 </vbutton>
             </div>

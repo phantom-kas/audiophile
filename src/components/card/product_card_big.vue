@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import data from '../../data.json'
 import vbutton from '../buttons/vbutton.vue';
-import top_line from '../top_line.vue';
 </script>
 <template>
     <div
