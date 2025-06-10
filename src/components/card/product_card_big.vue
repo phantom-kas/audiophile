@@ -15,7 +15,7 @@ import vbutton from '../buttons/vbutton.vue';
                     class="w-full gap-6 flex flex-col items-center justify-center md:items-start  lg:gap-4 xl:gap-10  sm:w-[max(379px)] md:gap-3 md:pb-7">
                     <span class=" font-[100] text-[14px] opacity-[49.66%]">NEW PRODUCT</span>
                     <h1
-                        class=" w-[max(379px)] font-[600] md:text-5xl text-4xl  lg:text-6xl uppercase b952:text-5xl text-center md:text-start w-fut">
+                        class="w-full sm:w-[max(379px)] font-[600] md:text-5xl text-4xl  lg:text-6xl uppercase b952:text-5xl text-center md:text-start w-fut">
                         {{ data[3]['name'] }}
                     </h1>
                     <span class="opacity-[75%] text-[15px] text-center md:text-start">
