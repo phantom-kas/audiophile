@@ -70,7 +70,7 @@ onUnmounted(() => {
         
 
 
-        <div class="flex flex-col sec2img justify-start items-start md:w-[30%]  w-[170px] sm:w-[200px] relative" >
+        <div class="flex flex-col sec2img justify-start items-start md:w-[30%]  w-[17#0px] sm:w-[200px] relative" >
           <res_img path="/assets/home/" file-name="image-speaker-zx9.png"
             class="w-full h-full  md:mb-[-2rem] z-20" />
 
