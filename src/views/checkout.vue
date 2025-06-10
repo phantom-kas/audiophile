@@ -34,7 +34,7 @@ const handelSubmit = () => {
 
                 <div class="flex flex-col sm:flex-row justify-between gap-3.5">
                     <vinput label="Name" placeholder="Alexei Ward" class=" grow" />
-                    <vinput required label="Email Address" placeholder="alexei@mail.com" type="Email" class=" grow" />
+                    <vinput required label="Email Address" placeholder="alexei@mail.com" type="email" class=" grow" />
                 </div>
 
                 <vinput label="Phone Number" placeholder="+1 202-555-0136" class="sm:w-[50%]" />
@@ -45,7 +45,7 @@ const handelSubmit = () => {
                 <vinput label="Address" placeholder="1137 Williams Avenue" class=" grow" />
                 <div class="flex flex-col sm:flex-row justify-between gap-3.5">
                     <vinput label="Zip Code" placeholder="10001" class=" grow" />
-                    <vinput label="City" placeholder="New York" type="Email" class=" grow" />
+                    <vinput label="City" placeholder="New York" type="test" class=" grow" />
                 </div>
                 <vinput label="Country" placeholder="United States" class="sm:w-[50%]" />
 
@@ -62,9 +62,9 @@ const handelSubmit = () => {
                 </div>
                 <div class="flex flex-col sm:flex-row justify-between gap-3.5">
                     <vinput label="e-Money Number" placeholder="238521993" class=" grow" />
-                    <vinput label="e-Money Pin" placeholder="6891" type="Email" class=" grow" />
+                    <vinput label="e-Money Pin" placeholder="6891" type="test" class=" grow" />
                 </div>
-                <div class=" md:flex flex-row justify-between gap-7 hidden md:block">
+                <div class=" md:flex flex-row justify-between gap-7 hidden">
                     <strange_icon />
                     <div class=" opacity-[50%] ">
                         The 'Cash on Delivery' option enables you to pay in cash when our delivery courier arrives at

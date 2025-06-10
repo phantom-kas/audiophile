@@ -22,22 +22,27 @@ export const useCartStore = defineStore('cart', () => {
     cartItems.value = []
     total.value = 0
   }
-  const cartItems = useLocalStorage("cartItems", ref([] as cartItemsType[]))
+  const cartItems = useLocalStorage("cartItems2", ref([] as cartItemsType[]))
 
   const calcCartTotal = () => {
     total.value = 0
     total.value = cartItems.value.reduce((acc, item) => {
-      return acc + item.unitPrice * item.quantity
+      return acc + parseFloat(item.unitPrice+'') * parseFloat(item.quantity+'')
     }, 0)
     return total.value
   }
 
   const calculateCount = ()=>{
     itemsCount.value =cartItems.value.reduce((acc, item) => {
-      return acc + item.quantity
+      return acc +  parseInt(item.quantity+'')
     }, 0)
   }
   const increment = (product: any, quantity: number = 1) => {
+    if(quantity < 1 ){
+      return
+    }
+    console.log(quantity)
+    // window.alert(typeof quantity)
     const existingItemIndex = cartItems.value.findIndex(item => item.id === product.id)
     console.log(product.price)
     if (product.unitPrice != undefined) {
@@ -53,13 +58,13 @@ export const useCartStore = defineStore('cart', () => {
     if (existingItemIndex != -1) {
 
       cartItems.value[existingItemIndex].unitPrice = parseFloat(cartItems.value[existingItemIndex].unitPrice + '')
-      cartItems.value[existingItemIndex].quantity = parseFloat(cartItems.value[existingItemIndex].quantity + '')
+      cartItems.value[existingItemIndex].quantity = parseInt(cartItems.value[existingItemIndex].quantity + '')
 
       cartItems.value[existingItemIndex].quantity =cartItems.value[existingItemIndex].quantity + quantity
       cartItems.value[existingItemIndex].price = cartItems.value[existingItemIndex].unitPrice * cartItems.value[existingItemIndex].quantity
 
 
-      console.log(cartItems.value[existingItemIndex].unitPrice * cartItems.value[existingItemIndex].quantity)
+      // console.log(cartItems.value[existingItemIndex].unitPrice * cartItems.value[existingItemIndex].quantity)
       // console.log('--------------------------------------')
       // console.log(newProduct)
     }

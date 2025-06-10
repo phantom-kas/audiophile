@@ -32,7 +32,7 @@ defineProps({
             </span>
             <span class=" text-[18px] font-[600]" v-html="'$ '+formateNumber(product.price)"></span>
             <div class=" flex flex-row gap-4 px gap-y-20 ">
-                <adder :value="1"  @change="e=>quantiy = e" />
+                <adder :value="1"  @change="e=>quantiy = parseInt(e + '')" />
                     <!-- {{ cart.itemsCount }} -->
                 <vbutton @click="cart.increment(product,quantiy)" >
                     ADD TO CART

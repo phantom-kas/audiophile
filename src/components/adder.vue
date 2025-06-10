@@ -40,7 +40,8 @@ const handelDecreament = () => {
     }
 slidAdm.value ='slide-down'
     val.value -= 1;
-     emit('change', val)
+     emit('change', val.value)
+     console.log(val.value)
 
      emit('reduce')
 
